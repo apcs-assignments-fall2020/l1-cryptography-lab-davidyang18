@@ -34,13 +34,44 @@ public class Caesar {
     }
 
     public static String encryptCaesarKey(String message, int key) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a key for your shift");
+        key = sc.nextInt();
+        sc.close();
+        char ch = ' ';
+        String output = " ";
+        for (int i = 0; i < message.length(); i++) {
+            ch = message.charAt(i);
+            if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
+                ch = (char) (ch + key);
+                if ((ch > 'z') || (ch > 'Z' && ch < 'a')) {
+                    ch = (char) (ch - (23+key));
+                }
+            }
+            output += ch;
+        }
+        return output;
+        
     }
 
     public static String decryptCaesarKey(String message, int key) {
-        return message;
-        // REPLACE THIS WITH YOUR CODE
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Please enter a key for your shift");
+        key = sc.nextInt();
+        sc.close();
+        char ch = ' ';
+        String output = " ";
+        for (int i = 0; i < message.length(); i++) {
+            ch = message.charAt(i);
+            if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
+                ch = (char) (ch - key);
+                if ((ch < 'A') || (ch > 'A' && ch < 'z')) {
+                    ch = (char) (ch + (23 - key));
+                }
+            }
+            output += ch;
+        }
+        return output;
     }
 
 
