@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Caesar {
     public static String encryptCaesar(String message) {
         char ch = ' ';
-        String output = " ";
+        String output = "";
         for (int i = 0; i < message.length(); i++) {
             ch = message.charAt(i);
             if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
@@ -19,12 +19,12 @@ public class Caesar {
 
     public static String decryptCaesar(String message) {
        char ch = ' ';
-        String output = " ";
+        String output = "";
         for (int i = 0; i < message.length(); i++) {
             ch = message.charAt(i);
             if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
                 ch = (char) (ch - 3);
-                if ((ch < 'A') || (ch > 'A' && ch < 'z')) {
+                if ((ch < 'A') || (ch > 'Z' && ch < 'a')) {
                     ch = (char) (ch + 26);
                 }
             }
@@ -34,12 +34,12 @@ public class Caesar {
     }
 
     public static String encryptCaesarKey(String message, int key) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter a key for your shift");
-        key = sc.nextInt();
-        sc.close();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.println("Please enter a key for your shift");
+        // key = sc.nextInt();
+        // sc.close();
         char ch = ' ';
-        String output = " ";
+        String output = "";
         for (int i = 0; i < message.length(); i++) {
             ch = message.charAt(i);
             if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
@@ -55,12 +55,12 @@ public class Caesar {
     }
 
     public static String decryptCaesarKey(String message, int key) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Please enter a key for your shift");
-        key = sc.nextInt();
-        sc.close();
+        // Scanner sc = new Scanner(System.in);
+        // System.out.println("Please enter a key for your shift");
+        // key = sc.nextInt();
+        // sc.close();
         char ch = ' ';
-        String output = " ";
+        String output = "";
         for (int i = 0; i < message.length(); i++) {
             ch = message.charAt(i);
             if ((ch >= 'a' && ch <= 'z') || ( ch >= 'A' && ch <= 'Z')) {
